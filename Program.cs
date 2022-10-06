@@ -11,7 +11,7 @@ namespace Password
             string message = "Quod licet Jovi, non licet bovi";
 
             int trial = 3;
-            int currentTrial = 3;
+            int currentTrial = trial;
 
             Console.WriteLine("Введите новый пароль:");
             password = Console.ReadLine();            

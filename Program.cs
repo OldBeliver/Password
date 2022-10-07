@@ -7,35 +7,29 @@ namespace Password
         static void Main(string[] args)
         {
             string password;
-            string passwordCerification;
+            string passwordVerification;
             string message = "Quod licet Jovi, non licet bovi";
-
+            
             int trial = 3;
-            int currentTrial = trial;
-
+                        
             Console.WriteLine("Введите новый пароль:");
             password = Console.ReadLine();            
 
-            for (int i = 0; i < trial; i++)
+            for (int i = trial; i > 0; i--)
             {
                 Console.WriteLine("Подтвердите пароль:");
-                passwordCerification = Console.ReadLine();
+                Console.WriteLine($"Осталось {i} попытки");
+                passwordVerification = Console.ReadLine();
 
-                if (password == passwordCerification)
+                if(password == passwordVerification)
                 {
                     Console.WriteLine(message);
-                    i = trial;
+                    i = 0;
                 }
                 else
                 {
-                    currentTrial--;
-                    Console.WriteLine($"Оставшиеся попытки: {currentTrial}");
-                }
-            }
-
-            if (currentTrial == 0)
-            {
-                Console.WriteLine($"Пароль не подтвержден.");
+                    Console.WriteLine($"Пароль не подтвержден.");
+                }                
             }
         }
     }
